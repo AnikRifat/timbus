@@ -13,24 +13,63 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <style>
-        .s-3-t img.img-fluid{
-            box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
-            height: 9rem;
+        .s-3-t img.img-fluid.p-p{
+            box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.75);
+            height: 10rem;
+            width: 10rem;
+            border: 2px solid #ffffff;
+        }
+        img.img-fluid.p-c {
+            position: relative;
+            height: 20rem;
+            width: 100%;
+        }
+        
+        img.img-fluid.p-p.my-auto {
+            position: absolute;
+            bottom: 3rem;
+            left: 5rem;
+        }
+        button.btn.btn-sm.btn-light.text-dark {
+            position: absolute;
+            right: 14px;
+            bottom: 0px;
+            /* background: aquamarine; */
         }
     </style>
 </head>
 <body>
     <!--wraper-->
-    
+    <div class="modal fade" id="editorModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Describe</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body" id="editor1">
+                </div>                  
+                <!-- Modal footer -->
+                <div class="modal-footer p-0">
+                    <button type="button" class="btn btn-info rounded-0" data-dismiss="modal" id="btn-data1">Submit</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
     <div class="wraper">
         <div class="container-nai">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="s-3-t p-4 bg-info">
-                        <div class="container">
+                    <div class="s-3-t my-bussiness-cover">
+                        <div class="container-ki">
                             <div class="row">
-                                <div class="col-lg-5"><img src="img/b-l.jpg" alt="" class="img-fluid my-auto"></div>
-                                <div class="col-lg-7"><h1 class="bg-info text-center text-light p-2 mt-4">Your Bussiness Name</h1></div>
+                                <div class="col-lg-12"><img src="img/bata-cover.jpg" alt="" class="img-fluid p-c"> <button class="btn btn-sm btn-light rounded-0 text-dark">Change</button></div>
+                                <div class="col-lg-6"><img src="img/b-l.jpg" alt="" class="img-fluid rounded-circle p-p my-auto"></div>
                                 
                             </div>
                         </div>
@@ -98,7 +137,7 @@
                                         <div class="row">
                                             <div class="col-lg-12"><h4 class="font-weight-bold" ><li>Discribe About Your Store</li></h4></div>
                                             <div class="col-lg-12">
-                                                <div class="ms-w bg-info text-dark p-5 text-center"><p class="my-auto"  id="editor"></p></div>
+                                                <div class="ms-w bg-info text-dark p-5 text-center"><p class="d-1  text-light" id="ck1"><a class="my-auto" data-toggle="modal" data-target="#editorModal"><span><i class="fas fa-edit"></i></span> Discribe</a></p></div>
                                             </div>
                                         </div>
                                     </div>
@@ -106,7 +145,8 @@
                                         <div class="row">
                                             <div class="col-lg-12"><h4 class="font-weight-bold"><li>Discribe About Your Terms & Policy</li></h4></div>
                                             <div class="col-lg-12">
-                                                <div class="ms-w bg-info text-dark p-5 text-center"><p class="my-auto"  id="editor2"></p></div>
+                                                <div class="ms-w bg-info text-dark p-5 text-center"><p class="d-1  text-light" id="ck2"><a class="my-auto" data-toggle="modal" data-target="#editorModal"><span><i class="fas fa-edit"></i></span> Discribe</a></p></div>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -114,7 +154,8 @@
                                         <div class="row">
                                             <div class="col-lg-12"><h4 class="font-weight-bold"><li>CA/RETURN/REFUND/REPLEACEMNET POLICY</li></h4></div>
                                             <div class="col-lg-12">
-                                                <div class="ms-w bg-info text-dark p-5 text-center"><p class="my-auto"  id="editor3"></p></div>
+                                                <div class="ms-w bg-info text-dark p-5 text-center"><p class="d-1  text-light" id="ck3"><a class="my-auto" data-toggle="modal" data-target="#editorModal"><span><i class="fas fa-edit"></i></span> Discribe</a></p></div>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -139,21 +180,22 @@
     <script src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js"></script>
     <script src="js/app.js"></script>
     <script>
+        let editor1;
+
+        
         ClassicEditor
-        .create( document.querySelector( '#editor' ) )
-        .catch( error => {
-            console.error( error );
+        .create( document.querySelector( '#editor1' ) )
+        .then( newEditor => {
+            editor1 = newEditor;
+        } )
+
+        
+        // Assuming there is a <button id="submit">Submit</button> in your application.
+        document.querySelector( '#btn-data1' ).addEventListener( 'click', () => {
+            document.getElementById("ck1").innerHTML = editor1.getData();
+            
+            // ...
         } );
-        ClassicEditor
-        .create( document.querySelector( '#editor2' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-        ClassicEditor
-        .create( document.querySelector( '#editor3' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-    </script>
-</body>
-</html>
+        </script>
+    </body>
+    </html>
