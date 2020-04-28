@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>timbas customer registration</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+ 
+    <style>
+       .payment input.form-control {
+            border-bottom: 2px solid #6c757d!important;
+        }
+        
+        .payment label.col-md-3.col-12.font-weight-bold.text-info {
+            color: #6c757d!Important;
+            /* vertical-align: -webkit-baseline-middle; */
+        }
+        
+       .payment textarea.form-control {
+            border-bottom: 2px solid #6c757d !important;
+        }
+        textarea.form-control:focus{
+            box-shadow: none;
+        }
+        input.form-control:focus{
+            box-shadow: none;
+        }
+        .payment textarea.form-control:focus{
+            border-bottom: 2px solid #17a2b8!important;
+            
+        }
+        .payment input.form-control:focus{
+            border-bottom: 2px solid #17a2b8!important;
+            
+        }
+        .card {
+            border: none;
+        }
+        .progress{
+            background: #dadada;
+            border: 1px solid #dc3545;
+            height: 2rem;
+            width: 6rem;
+        }
+        
+        .step {
+            list-style: none;
+            margin: .2rem 0;
+            width: 100%;
+        }
+        
+        .step .step-item {
+            -ms-flex: 1 1 0;
+            flex: 1 1 0;
+            margin-top: 0;
+            min-height: 1rem;
+            position: relative; 
+            text-align: center;
+        }
+        
+        .step .step-item:not(:first-child)::before {
+            background: #0069d9;
+            content: "";
+            height: 2px;
+            left: -50%;
+            position: absolute;
+            top: 9px;
+            width: 100%;
+        }
+        
+        .step .step-item a {
+            color: #acb3c2;
+            display: inline-block;
+            padding: 20px 10px 0;
+            text-decoration: none;
+        }
+        
+        .step .step-item a::before {
+            background: #0069d9;
+            border: .1rem solid #fff;
+            border-radius: 50%;
+            content: "";
+            display: block;
+            height: .9rem;
+            left: 50%;
+            position: absolute;
+            top: .2rem;
+            transform: translateX(-50%);
+            width: .9rem;
+            z-index: 1;
+        }
+        
+        .step .step-item.active a::before {
+            background: #fff;
+            border: .1rem solid #0069d9;
+        }
+        
+        .step .step-item.active ~ .step-item::before {
+            background: #e7e9ed;
+        }
+        
+        .step .step-item.active ~ .step-item a::before {
+            background: #e7e9ed;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div class="wraper">
+        <!--wraper-->
+        <div class="payment_page p-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-lg-12 text-center">
+                        <div class="container">
+                            <div class="mt-5 mb-5 text-center">
+                                <h2>Seller Registration Form</h2>
+                            </div>
+                            <ul class="step d-flex flex-nowrap">
+                                <li class="step-item">
+                                    <a href="#!" class="">profile 0%</a>
+                                </li>
+                                <li class="step-item">
+                                    <a href="#!" class="">profile 30%</a>
+                                </li>
+                                <li class="step-item active">
+                                    <a href="#!" class="">profile 60%</a>
+                                </li>
+                                <li class="step-item">
+                                    <a href="#!" class="">profile 80%</a>
+                                </li>
+                                <li class="step-item">
+                                    <a href="#!" class="">profile 100%</a>
+                                </li>
+                            </ul> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 py-4">
+                    <div class="container identity">
+                        <h3 class="text-dark font-weight-bold py-2"><i class="fas fa-square mr-2"></i> Your Identity Verification</h3>   
+                        <hr>
+                        <form action="">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">NID/Passport/Driving License No.</span>
+                                </div>
+                                <input type="text" class="form-control" maxlength="20" placeholder="Number" required="required">
+                                <div class="input-group-prepend">
+                                    <label for="attfile" class="input-group-text" required="required">Attatch Document</label>
+                                </div>
+                                <input type="file" id="attfile" style="display: none;">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="container payment">
+                        <div class="mx-auto">
+                            <span class="anchor" id="formPayment"></span>
+                            <!-- form card cc payment -->
+                            <div class="card">
+                                <h3 class="text-dark font-weight-bold py-2"><i class="fas fa-square mr-2"></i>Update your payment option to complete your profile</h3>   
+                                <hr> 
+                                <div class="card-body">
+                                    <form class="form" role="form" autocomplete="off">
+                                        <div class="form-group row">
+                                            <label for="ah_name " class="col-md-3 col-12 font-weight-bold text-info m-0 mt-1">Account Holder's Name :</label>
+                                            <input type="text" class="form-control col-md-9 col-12 rounded-0 border-0" id="ah_name"  title="First and last name" required="required">
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="an_name" class="col-md-3 col-12 font-weight-bold text-info m-0 mt-1">Account Name :</label>
+                                            <input type="text" class="form-control col-md-9 col-12 rounded-0 border-0" id="an_name"  title="Account Type" required="required">
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-12 font-weight-bold text-info m-0 mt-1">Bank Account Number :</label>
+                                            <input type="text" class="form-control col-md-9 col-12 rounded-0 border-0" autocomplete="off" maxlength="20" pattern="\d{16}" title="Bank account number" required="required">
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-12 font-weight-bold text-info m-0 mt-1">Bank Address :</label>
+                                            <textarea type="address" class="form-control col-md-9 col-12 rounded-0 border-0" autocomplete="off" title="Bank Address" rows="1" required="required"></textarea>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-12 font-weight-bold text-info m-0 mt-1">Branch name :</label>
+                                            <input type="address" class="form-control col-md-9 col-12 rounded-0 border-0" autocomplete="off" maxlength="20" pattern="\d{16}" title="Branch Names" required="required">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 col-12 font-weight-bold text-info m-0 mt-1">Routing Number :</label>
+                                                    <input type="text" class="form-control col-md-9 col-12 rounded-0 border-0" autocomplete="off"  pattern="\d{16}" title="Routing number" required="required">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 col-12 font-weight-bold text-info m-0 mt-1">Swift Code :</label>
+                                                    <input type="text" class="form-control col-md-9 col-12 rounded-0 border-0" autocomplete="off"  pattern="\d{16}" title="Swift code" required="required">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <hr>
+                                        
+                                    </form>
+                                    <button class="btn rounded-0 1st-btn float-right btn-info">Submit <i class="fas fa-chevron-circle-right ml-2"></i></button>
+                                        <button class="btn rounded-0 2nd-btn float-right btn-success d-none">success <i class="far fa-check-circle ml-2"></i></button>
+                                </div>
+                            </div>
+                            <!-- /form card cc payment -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            <!--wraper-->
+        </div>
+        
+        <!--js link aria goes here-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js"></script>
+        <script>
+            $(document).ready(function(){
+                $(".1st-btn").click(function(){
+                    $(".1st-btn").addClass("d-none");
+                    $(".2nd-btn").removeClass("d-none");
+                })
+            })
+        </script>
+    </body>
+    </html>

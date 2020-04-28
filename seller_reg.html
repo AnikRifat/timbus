@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>timbas customer registration</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/formProgressBar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+    
+    <style>
+        textarea:focus, 
+        textarea.form-control:focus, 
+        input.form-control:focus, 
+        input[type=text]:focus, 
+        input[type=password]:focus, 
+        input[type=email]:focus, 
+        input[type=number]:focus, 
+        [type=text].form-control:focus, 
+        [type=password].form-control:focus, 
+        [type=email].form-control:focus, 
+        [type=tel].form-control:focus, 
+        [contenteditable].form-control:focus {
+            box-shadow: inset 0 -1px 0 #ddd;
+        }
+        .s-s-1 input.form-control {
+            border: 2px solid #17a2b8;
+            border-radius: 0px;
+            /* height: 4rem; */
+            outline: none;
+            /* border: none; */
+        }
+        
+        .s-s-1 select.form-control {
+            border: 2px solid #17a2b8;
+            border-radius: 0px;
+        }
+        .s-s-1 span.input-group-text.bg-info.text-light {
+            width: 14rem;
+            border: 2px;
+        }
+        
+        .s-s-1 textarea.form-control {
+            border: 2px solid #17a2b8;
+        }
+        .s-s-1 button.btn.btn-block.btn-success {
+            border-radius: 0px;
+        }
+        .step {
+            list-style: none;
+            margin: .2rem 0;
+            width: 100%;
+        }
+        
+        .step .step-item {
+            -ms-flex: 1 1 0;
+            flex: 1 1 0;
+            margin-top: 0;
+            min-height: 1rem;
+            position: relative; 
+            text-align: center;
+        }
+        
+        .step .step-item:not(:first-child)::before {
+            background: #0069d9;
+            content: "";
+            height: 2px;
+            left: -50%;
+            position: absolute;
+            top: 9px;
+            width: 100%;
+        }
+        
+        .step .step-item a {
+            color: #acb3c2;
+            display: inline-block;
+            padding: 20px 10px 0;
+            text-decoration: none;
+        }
+        
+        .step .step-item a::before {
+            background: #0069d9;
+            border: .1rem solid #fff;
+            border-radius: 50%;
+            content: "";
+            display: block;
+            height: .9rem;
+            left: 50%;
+            position: absolute;
+            top: .2rem;
+            transform: translateX(-50%);
+            width: .9rem;
+            z-index: 1;
+        }
+        
+        .step .step-item.active a::before {
+            background: #fff;
+            border: .1rem solid #0069d9;
+        }
+        
+        .step .step-item.active ~ .step-item::before {
+            background: #e7e9ed;
+        }
+        
+        .step .step-item.active ~ .step-item a::before {
+            background: #e7e9ed;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <!--wraper-->
+    
+    <div class="wraper">
+        <div class="s-s-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div class="container">
+                            <div class="mt-5 mb-5 text-center">
+                                <h2>Seller Registration Form</h2>
+                            </div>
+                            <ul class="step d-flex flex-nowrap">
+                                <li class="step-item active">
+                                    <a href="#!" class="">profile 0%</a>
+                                </li>
+                                <li class="step-item">
+                                    <a href="#!" class="">profile 40%</a>
+                                </li>
+                                <li class="step-item">
+                                    <a href="#!" class="">profile 60%</a>
+                                </li>
+                                <li class="step-item">
+                                    <a href="#!" class="">profile 80%</a>
+                                </li>
+                                <li class="step-item">
+                                    <a href="#!" class="">profile 100%</a>
+                                </li>
+                            </ul> 
+                        </div>
+                    </div>
+                    <div class="col-lg-12 text-center"><h2 class="font-weight-bold text-danger">SELLER INFORMATION</h2><hr></div>
+                    <div class="col-lg-12 py-4">
+                        <form class="row text-center">
+                            <div class="col-lg-12">
+                                <div class="input-group w-75  mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-info text-light">Store/Bussiness Name</span>
+                                    </div>
+                                    <input type="text" class="form-control ml-2" placeholder="Enter Store/Bussiness Name" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="input-group mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-info text-light">Name</span>
+                                    </div>
+                                    <input type="text" class="form-control ml-2" placeholder="First Name" required>
+                                    <input type="text" class="form-control ml-2" placeholder="Last Name" required>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="col-lg-12">
+                                <div class="input-group mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-info text-light">Address (Personal)</span>
+                                    </div>
+                                    <textarea type="text" class="form-control ml-2" placeholder="Enter Adress (Personal)" required></textarea>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="input-group mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-info text-light">Address (Bussiness)</span>
+                                    </div>
+                                    <textarea type="text" class="form-control ml-2" placeholder="Enter Adress (Bussiness)" required></textarea>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            <div class="col-lg-6">
+                                <div class="input-group w-75 mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-info text-light">City/Town</span>
+                                    </div>
+                                    <select class="form-control ml-2" name="cars" required>
+                                        <option selected>City/Town</option>
+                                        <option value="volvo">Volvo</option>
+                                        <option value="fiat">Fiat</option>
+                                        <option value="audi">Audi</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="input-group w-75 mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-info text-light">District</span>
+                                    </div>
+                                    <select class="form-control ml-2" name="cars required">
+                                        <option selected>District</option>
+                                        <option value="volvo">Volvo</option>
+                                        <option value="fiat">Fiat</option>
+                                        <option value="audi">Audi</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="input-group w-75 mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-info text-light">State/Devision</span>
+                                    </div>
+                                    <select class="form-control ml-2" name="cars" required>
+                                        <option selected>State/Devision</option>
+                                        <option value="volvo">Volvo</option>
+                                        <option value="fiat">Fiat</option>
+                                        <option value="audi">Audi</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-6">
+                                <div class="input-group w-75 mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-info text-light">Country</span>
+                                    </div>
+                                    <select class="form-control ml-2" name="cars" required>
+                                        <option selected>Country</option>
+                                        <option value="volvo">Volvo</option>
+                                        <option value="fiat">Fiat</option>
+                                        <option value="audi">Audi</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="input-group w-50 mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-info text-light">Personal Phone Number</span>
+                                    </div>
+                                    <input type="tel" class="form-control ml-2" placeholder="Enter Personal Phone Number" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="input-group w-50 mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-info text-light">Bussiness Phone Number</span>
+                                    </div>
+                                    <input type="tel" class="form-control ml-2" placeholder="Enter Bussiness Phone Number" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="input-group w-50 mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-info text-light">Email</span>
+                                    </div>
+                                    <input type="email" class="form-control ml-2" placeholder="example@email.com" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="input-group w-50 mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-info text-light">Password</span>
+                                    </div>
+                                    <input type="password" class="form-control ml-2" placeholder="Password" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="input-group w-50 mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-info text-light">Confirm Password</span>
+                                    </div>
+                                    <input type="password" class="form-control ml-2" placeholder="Password" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-10">
+                                <div class="custom-control custom-checkbox float-left">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+                                    <label class="custom-control-label font-weight-bold" for="customCheck" required>Agree with Terms & Conditions.................</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-2"><a href="regs3.html"><div class="btn btn-block rounded-0 btn-info">Next</div></a></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--wraper-->
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="js/formProgressBar.jquery.js"></script>
+    <script>
+        $("form").formProgressBar({
+            percentCounting: true, // default: false
+            transitionTime: 500,
+        });
+    </script>
+</body>
+</html>

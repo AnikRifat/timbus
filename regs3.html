@@ -7,195 +7,372 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link href="css/fontawesome.css" rel="stylesheet">
-    <link href="css/brands.css" rel="stylesheet">
-    <link href="css/solid.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
     <style>
-        .s-3-t img.img-fluid.p-p{
+        .regs-3 .s-3-t img.img-fluid.p-p{
             box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.75);
             height: 10rem;
             width: 10rem;
-            border: 2px solid #ffffff;
+            border: 5px solid #ffffff;
         }
-        img.img-fluid.p-c {
+        .regs-3 .p-h.text-light {
+            background: rgba(0, 0, 0, 0.90);
+            display: none;
+            position: absolute;
+            width: 9.5rem;
+            height: 9.5rem;
+            top: 49px;
+            left: 64px;
+            border-radius: 50%;
+        }
+        .regs-3 .img-a:hover .p-h {
+            display: block;
+        }
+        
+        .regs-3 img.img-fluid.rounded-circle.p-p.ml-5.my-auto {
             position: relative;
-            height: 20rem;
+        }
+        .regs-3 img.p-p:hover .p-h.text-light{
+            display: none;
+        }
+        .regs-3 label.p-h-t.text-center {
+            position: absolute;
+            top: 4rem;
+            left: 2rem;
+        }
+        .regs-3 .col-lg-12.p-c.pb-5 {
+            border-top: 3px solid #17a2b8;
+        }
+        .progressjs-theme-blue .progressjs-inner{
+            height: 20px;
+            transition: all 0.3s ease-out;
+        }
+        .regs-3 .custab{
+            border: 1px solid #ccc;
+            padding: 5px;
+            box-shadow: 3px 3px 2px #ccc;
+            transition: 0.5s;
+        }
+        .regs-3 .custab:hover{
+            box-shadow: 3px 3px 0px transparent;
+            transition: 0.5s;
+        }
+        .col-lg-12.p-c{
+            background-image: url("../img/bata-cover.jpg"); 
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .col-lg-12.p-c h1{
+            text-shadow: 0px 0px 5px #FFFFFF;
+            font-size:3rem;
+        }
+        .ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline.ck-blurred {
+            height: 10rem;
+        }
+        .progress{
+            background: #dadada;
+            border: 1px solid #dc3545;
+            height: 2rem;
+            width: 6rem;
+        }
+        
+        .step {
+            list-style: none;
+            margin: .2rem 0;
             width: 100%;
         }
         
-        img.img-fluid.p-p.my-auto {
-            position: absolute;
-            bottom: 3rem;
-            left: 5rem;
+        .step .step-item {
+            -ms-flex: 1 1 0;
+            flex: 1 1 0;
+            margin-top: 0;
+            min-height: 1rem;
+            position: relative; 
+            text-align: center;
         }
-        button.btn.btn-sm.btn-light.text-dark {
+        
+        .step .step-item:not(:first-child)::before {
+            background: #0069d9;
+            content: "";
+            height: 2px;
+            left: -50%;
             position: absolute;
-            right: 14px;
-            bottom: 0px;
-            /* background: aquamarine; */
+            top: 9px;
+            width: 100%;
         }
+        
+        .step .step-item a {
+            color: #acb3c2;
+            display: inline-block;
+            padding: 20px 10px 0;
+            text-decoration: none;
+        }
+        
+        .step .step-item a::before {
+            background: #0069d9;
+            border: .1rem solid #fff;
+            border-radius: 50%;
+            content: "";
+            display: block;
+            height: .9rem;
+            left: 50%;
+            position: absolute;
+            top: .2rem;
+            transform: translateX(-50%);
+            width: .9rem;
+            z-index: 1;
+        }
+        
+        .step .step-item.active a::before {
+            background: #fff;
+            border: .1rem solid #0069d9;
+        }
+        
+        .step .step-item.active ~ .step-item::before {
+            background: #e7e9ed;
+        }
+        
+        .step .step-item.active ~ .step-item a::before {
+            background: #e7e9ed;
+        }
+        
     </style>
 </head>
 <body>
-    <!--wraper-->
-    <div class="modal fade" id="editorModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Describe</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                
-                <!-- Modal body -->
-                <div class="modal-body" id="editor1">
-                </div>                  
-                <!-- Modal footer -->
-                <div class="modal-footer p-0">
-                    <button type="button" class="btn btn-info rounded-0" data-dismiss="modal" id="btn-data1">Submit</button>
-                </div>
-                
-            </div>
-        </div>
-    </div>
+    
     <div class="wraper">
-        <div class="container-nai">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="s-3-t my-bussiness-cover">
-                        <div class="container-ki">
-                            <div class="row">
-                                <div class="col-lg-12"><img src="img/bata-cover.jpg" alt="" class="img-fluid p-c"> <button class="btn btn-sm btn-light rounded-0 text-dark">Change</button></div>
-                                <div class="col-lg-6"><img src="img/b-l.jpg" alt="" class="img-fluid rounded-circle p-p my-auto"></div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12 py-4">
-                    <div class="row">
-                        <div class="col-lg-12"><span class="bg-info text-light p-2 m-4 float-right">STEP 3</span></div>
-                        <div class="col-lg-12 s-3-d bg-info text-light">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <span class="bg-info text-light p-2 mt-4 float-right border border-light">Percentege</span>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="row">
-                                            <div class="col-lg-10 col-md-10 col-10"><span class="float-left">Name :</span><p class="text-center">my name</p></div>
-                                            <div class="col-lg-2 col-md-2 col-10"><span class="text-center"><a href="">Edit</a></span></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="row">
-                                            <div class="col-lg-10 col-md-10 col-10"><span class="float-left">Adress :</span><p class="text-center">I want to go uk</p></div>
-                                            <div class="col-lg-2 col-md-2 col-10"><span class="text-center"><a href="">Edit</a></span></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="row">
-                                            <div class="col-lg-10 col-md-10 col-10"><span class="float-left">Email :</span><p class="text-center">Example@email.com</p></div>
-                                            <div class="col-lg-2 col-md-2 col-10"><span class="text-center"><a href="">Edit</a></span></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="row">
-                                            <div class="col-lg-10 col-md-10 col-10"><span class="float-left">Bussiness Phone Number :</span><p class="text-center">my name</p></div>
-                                            <div class="col-lg-2 col-md-2 col-10"><span class="text-center"><a href="">Edit</a></span></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="row">
-                                            <div class="col-lg-10 col-md-10 col-10"><span class="float-left">City/Town :</span><p class="text-center">my name</p></div>
-                                            <div class="col-lg-2 col-md-2 col-10"><span class="text-center"><a href="">Edit</a></span></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="row">
-                                            <div class="col-lg-10 col-md-10 col-10"><span class="float-left">Devision :</span><p class="text-center">my name</p></div>
-                                            <div class="col-lg-2 col-md-2 col-10"><span class="text-center"><a href="">Edit</a></span></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="row">
-                                            <div class="col-lg-10 col-md-10 col-10"><span class="float-left">District :</span><p class="text-center">my name</p></div>
-                                            <div class="col-lg-2 col-md-2 col-10"><span class="text-center"><a href="">Edit</a></span></div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="row">
-                                            <div class="col-lg-12"><h4 class="font-weight-bold" ><li>Discribe About Your Store</li></h4></div>
-                                            <div class="col-lg-12">
-                                                <div class="ms-w bg-info text-dark p-5 text-center"><p class="d-1  text-light" id="ck1"><a class="my-auto" data-toggle="modal" data-target="#editorModal"><span><i class="fas fa-edit"></i></span> Discribe</a></p></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="row">
-                                            <div class="col-lg-12"><h4 class="font-weight-bold"><li>Discribe About Your Terms & Policy</li></h4></div>
-                                            <div class="col-lg-12">
-                                                <div class="ms-w bg-info text-dark p-5 text-center"><p class="d-1  text-light" id="ck2"><a class="my-auto" data-toggle="modal" data-target="#editorModal"><span><i class="fas fa-edit"></i></span> Discribe</a></p></div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="row">
-                                            <div class="col-lg-12"><h4 class="font-weight-bold"><li>CA/RETURN/REFUND/REPLEACEMNET POLICY</li></h4></div>
-                                            <div class="col-lg-12">
-                                                <div class="ms-w bg-info text-dark p-5 text-center"><p class="d-1  text-light" id="ck3"><a class="my-auto" data-toggle="modal" data-target="#editorModal"><span><i class="fas fa-edit"></i></span> Discribe</a></p></div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!--wraper-->
-    </div>
-    
-    
-    <!--js link aria goes here-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js"></script>
-    <script src="js/app.js"></script>
-    <script>
-        let editor1;
-
-        
-        ClassicEditor
-        .create( document.querySelector( '#editor1' ) )
-        .then( newEditor => {
-            editor1 = newEditor;
-        } )
-
-        
-        // Assuming there is a <button id="submit">Submit</button> in your application.
-        document.querySelector( '#btn-data1' ).addEventListener( 'click', () => {
-            document.getElementById("ck1").innerHTML = editor1.getData();
+        <div class="regs-3">
             
-            // ...
-        } );
-        </script>
-    </body>
-    </html>
+            <div class="container-nai">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div class="container">
+                            <div class="mt-5 mb-5 text-center">
+                                <h2>Seller Registration Form</h2>
+                            </div>
+                            <ul class="step d-flex flex-nowrap">
+                                <li class="step-item">
+                                    <a href="#!" class="">profile 0%</a>
+                                </li>
+                                <li class="step-item active">
+                                    <a href="#!" class="">profile 30%</a>
+                                </li>
+                                <li class="step-item">
+                                    <a href="#!" class="">profile 60%</a>
+                                </li>
+                                <li class="step-item">
+                                    <a href="#!" class="">profile 80%</a>
+                                </li>
+                                <li class="step-item">
+                                    <a href="#!" class="">profile 100%</a>
+                                </li>
+                            </ul> 
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="s-3-t my-bussiness-cover pb-5 pt-2 border-top-0 border-dark">
+                            <div class="container-ki">
+                                <div class="row">
+                                    <div class="col-lg-12 p-c pb-5">
+                                        <div class="row">
+                                            <div class="col-md-1">
+                                                <span>
+                                                    <button class="btn btn-light btn-sm text-dark rounded-0">
+                                                        <label for="file-b"><i class="fas fa-camera m-1"></i>Change</label>
+                                                    </button>
+                                                    <input type="file" id="file-b" style="visibility:hidden;" accept="image/*">
+                                                </span>
+                                            </div>
+                                            <div class="col-lg-2 rounded-circle py-5">
+                                                <div class="img-a">
+                                                    <img src="img/b-l.jpg" alt="" class="img-fluid rounded-circle p-p ml-5 my-auto">
+                                                    <div class="p-h text-light">
+                                                        <label for="file-c" class="p-h-t text-center">
+                                                            <i class="fas fa-camera m-1"></i>Change
+                                                        </label>
+                                                        <input type="file" id="file-c" style="visibility:hidden;" accept="image/*">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8 py-5"><h1 class="text-light my-5 font-weight-bold">Bata Company</h1></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-12 py-2">
+                        <div class="row">
+                            <div class="col-lg-12 s-3-d bg-light text-light">
+                                <div class="container">
+                                    <div class="row">
+                                        <!--<div class="col-lg-12">
+                                            <div class="progress">
+                                                <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" style="width:40%">40%</div>
+                                            </div>
+                                        </div>-->
+                                        <div class="col-lg-12">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-lg-12 custyle">
+                                                        <table class="table table-striped custab">
+                                                            <thead class="text-light bg-success">
+                                                                <tr>
+                                                                    <th>Title</th>
+                                                                    <th>Description</th>
+                                                                    <th class="text-center">Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tr>
+                                                                <td>Name:</td>
+                                                                <td>Bata vai</td>
+                                                                <td class="text-center"><a class='btn btn-danger btn-xs rounded-0' href="#"><span><i class="fas fa-user-edit"></i></span>Edit</a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Address:</td>
+                                                                <td>Batar company</td>
+                                                                <td class="text-center"><a class='btn btn-danger btn-xs rounded-0' href="#"><span><i class="fas fa-user-edit"></i></span>Edit</a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Email:</td>
+                                                                <td>bata@gmail.com</td>
+                                                                <td class="text-center"><a class='btn btn-danger btn-xs rounded-0' href="#"><span><i class="fas fa-user-edit"></i></span>Edit</a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Bussiness Phone Number:</td>
+                                                                <td>01xxxxxxxxxxx</td>
+                                                                <td class="text-center"><a class='btn btn-danger btn-xs rounded-0' href="#"><span><i class="fas fa-user-edit"></i></span>Edit</a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>City/Town:</td>
+                                                                <td>Bata goli</td>
+                                                                <td class="text-center"><a class='btn btn-danger btn-xs rounded-0' href="#"><span><i class="fas fa-user-edit"></i></span>Edit</a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Division:</td>
+                                                                <td>Bata goli</td>
+                                                                <td class="text-center"><a class='btn btn-danger btn-xs rounded-0' href="#"><span><i class="fas fa-user-edit"></i></span>Edit</a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>District:</td>
+                                                                <td>Bata goli</td>
+                                                                <td class="text-center"><a class='btn btn-danger btn-xs rounded-0' href="#"><span><i class="fas fa-user-edit"></i></span>Edit</a></td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                                    
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="row">
+                                                <div class="col-lg-12"><h4 class="font-weight-bold bg-info text-light p-2" ><li>Discribe About Your Store</li></h4></div>
+                                                <div class="col-lg-12">
+                                                    <div class="ms-w bg-light p-5" id="myItem1">
+                                                        <p class="d-1  text-dark" id="ck1">
+                                                            <a class="my-auto" data-toggle="collapse" data-target="#demo">
+                                                                <span><i class="fas fa-edit"></i></span> Discribe</a>
+                                                            </p>
+                                                            <div id="demo" class="collapse">
+                                                                <div id="editor1">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-12"><h4 class="font-weight-bold bg-info text-light p-2"><li>Discribe About Your Terms & Policy</li></h4></div>
+                                                    <div class="col-lg-12">
+                                                        <div class="ms-w bg-light p-5">
+                                                            <p class="d-1  text-dark" id="ck1">
+                                                                <a class="my-auto" data-toggle="collapse" data-target="#demo2">
+                                                                    <span><i class="fas fa-edit"></i></span> Discribe</a>
+                                                                </p>
+                                                                <div id="demo2" class="collapse">
+                                                                    <div id="editor2">
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="row">
+                                                        <div class="col-lg-12"><h4 class="font-weight-bold bg-info text-light p-2"><li>CA/RETURN/REFUND/REPLEACEMNET POLICY</li></h4></div>
+                                                        <div class="col-lg-12">
+                                                            <div class="ms-w bg-light p-5">
+                                                                <p class="d-1  text-dark" id="ck1">
+                                                                    <a class="my-auto" data-toggle="collapse" data-target="#demo3">
+                                                                        <span><i class="fas fa-edit"></i></span> Discribe</a>
+                                                                    </p>
+                                                                    <div id="demo3" class="collapse">
+                                                                        <div id="editor3">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--wraper-->
+                    
+                </div>
+                
+                <!--js link aria goes here-->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+                <script src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js"></script>
+                <script>
+                    ClassicEditor
+                    .create( document.querySelector( '#editor1' ) )
+                    .catch( error => {
+                        console.error( error );
+                    } );
+                    ClassicEditor
+                    .create( document.querySelector( '#editor2' ) )
+                    .catch( error => {
+                        console.error( error );
+                    } );
+                    ClassicEditor
+                    .create( document.querySelector( '#editor3' ) )
+                    .catch( error => {
+                        console.error( error );
+                    } );
+                    
+                    //proggress js
+                    $(document).ready(function(){
+                        var ckitem = $(".ck-content").val().length;
+                        if(ckitem == 5){
+                            console.log("ok");
+                        }
+                        
+                        
+                        
+                    });
+                    
+                    //proggress js
+                </script>
+            </body>
+            </html>
